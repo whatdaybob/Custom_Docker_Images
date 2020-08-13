@@ -1,0 +1,2 @@
+marshmallow==3.5.1
+xbox-smartglass-core==1.2.2
