@@ -1,2 +1,3 @@
 sonarr_youtubedl/config/config.yml
 Plex-Auto-Collections # WIP
+__pycache__/
