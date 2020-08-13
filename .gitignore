@@ -1,3 +1,7 @@
 sonarr_youtubedl/config/config.yml
-Plex-Auto-Collections # WIP
+# WIP folders
+plex_auto_collections/
+xbox_webapi/
+# Local testing files
 __pycache__/
+sonarr_root/
