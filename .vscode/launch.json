@@ -18,7 +18,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/sonarr_youtubedl/app/sonarr_youtubedl.py",
             "console": "integratedTerminal",
-            "envFile": "${workspaceFolder}/env/sonarr_youtubedl.env"
+            "envFile": "${workspaceFolder}/env/sonarr_youtubedl_dev.env"
         }
     ]
 }
