@@ -5,3 +5,4 @@ xbox_webapi/
 # Local testing files
 __pycache__/
 sonarr_root/
+env/

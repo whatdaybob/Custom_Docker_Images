@@ -5,11 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "plex_auto_collections",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal"
+            "program": "${workspaceFolder}/plex_auto_collections/app/plex_auto_collections.py",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/env/plex_auto_collections_dev.env"
+        },
+        {
+            "name": "sonarr_youtubedl",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/sonarr_youtubedl/app/sonarr_youtubedl.py",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/env/sonarr_youtubedl.env"
         }
     ]
 }
