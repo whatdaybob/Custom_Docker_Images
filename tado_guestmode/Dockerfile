@@ -32,4 +32,4 @@ RUN \
 # ENV setup
 ENV CONFIGPATH /config/config.yml
 
-CMD ["gunicorn", "-b", "0.0.0.0:80", "tado_guestmode:api"]
+CMD ["gunicorn", "-b", "0.0.0.0:80", "rest:api"]
