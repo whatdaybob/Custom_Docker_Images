@@ -5,8 +5,10 @@ SmartGlass Core protocol python library now in a docker container [xbox-smartgla
 This is an unofficial build. For official things please refer to the project here [xbox-smartglass-core-python](https://github.com/OpenXbox/xbox-smartglass-core-python).
 
 ## Usage
+
 ### Docker
-``` bash
+
+```console
 docker create \
   --name=xboxrestapi \
   -e SERVER=127.0.0.1 \
@@ -15,7 +17,9 @@ docker create \
   --restart unless-stopped \
   whatdaybob/xbox-smartglass-core
 ```
+
 ### Docker Compose
+
 ``` yml
 version: '3.4'
 services:
@@ -33,7 +37,6 @@ services:
     ports: ['5557:5557']
 ```
 
-
 | Parameter | Function |
 |---------------------|---------------------------------------------------------|
 | -e PORT=5557 | Sets the port to listen on (default 5557) |
@@ -41,4 +44,6 @@ services:
 
 If i helped in anyway and you would like to help me, consider donating a lovely beverage with the below.
 
+<!-- markdownlint-disable MD033 -->
 <a href="https://www.buymeacoffee.com/whatdaybob" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-black.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+<!-- markdownlint-enable MD033 -->
