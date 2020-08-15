@@ -6,8 +6,8 @@
 
 <!-- markdownlint-disable MD033 -->
 <div style="width:100%">
-  <img src="./img/tado_guestmode_geotrack_disabled.jpg" alt="geotrack_disabled" title="geotrack_disabled" height="500" />
-  <img src="./img/tado_guestmode_geotrack_enabled.jpg" alt="geotrack_enabled" title="geotrack_enabled" height="500" />
+  <img src="./img/tado_guestmode_geotrack_disabled.jpg" alt="geotrack_disabled" title="geotrack_disabled" height="800" />
+  <img src="./img/tado_guestmode_geotrack_enabled.jpg" alt="geotrack_enabled" title="geotrack_enabled" height="800" />
 </div>
 <!-- markdownlint-enable MD033 -->
 
