@@ -1,0 +1,5 @@
+tado:
+  user: tadouser@email.com
+  pass: mytadopassword
+  # don't change below unless it stops working, can be obtained via https://my.tado.com/webapp/env.js
+  secret: wZaRN7rpjn3FoNyF5IFuxg9uMzYJcvOoQ8QWiIqS3hfk6gLhVlG57j5YNoZL2Rtc

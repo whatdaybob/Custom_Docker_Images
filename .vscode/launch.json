@@ -19,6 +19,14 @@
             "program": "${workspaceFolder}/sonarr_youtubedl/app/sonarr_youtubedl.py",
             "console": "integratedTerminal",
             "envFile": "${workspaceFolder}/env/sonarr_youtubedl_dev.env"
+        },
+        {
+            "name": "tado_guestmode",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/tado_guestmode/app/devlocal_test.py",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/env/tado_guestmode_dev.env"
         }
     ]
 }

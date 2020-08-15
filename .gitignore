@@ -1,3 +1,4 @@
+tado_guestmode/config/config.yml
 sonarr_youtubedl/config/config.yml
 # WIP folders
 plex_auto_collections/
@@ -6,3 +7,4 @@ xbox_webapi/
 __pycache__/
 sonarr_root/
 env/
+tado_connect.py.backup
