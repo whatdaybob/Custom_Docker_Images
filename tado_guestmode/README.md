@@ -5,8 +5,10 @@
 [Tado°](https://www.tado.com/) although great, is lacking one feature that I desperately needed, a guest mode. In short we had a babysitter and me and the other half went out and enjoyed some freedom from parenting, stupidly we forgot the heating was automated by our geolocation and the heating shut off. Normally this would be ok as you can manually control them but the techphobia was strong in our babysitter. Sure we/you can manually set the house to home but that requires an ingredient I dont have, effort. Plus what's the point in smart heating and a smart home if you dont make it work for  you.
 
 <!-- markdownlint-disable MD033 -->
-<img src="./img/tado_guestmode_geotrack_disabled.jpg" alt="geotrack_disabled" title="geotrack_disabled" height="500" />
-<img src="./img/tado_guestmode_geotrack_enabled.jpg" alt="geotrack_enabled" title="geotrack_enabled" height="500" />
+<div style="width:100%">
+  <img src="./img/tado_guestmode_geotrack_disabled.jpg" alt="geotrack_disabled" title="geotrack_disabled" height="500" />
+  <img src="./img/tado_guestmode_geotrack_enabled.jpg" alt="geotrack_enabled" title="geotrack_enabled" height="500" />
+</div>
 <!-- markdownlint-enable MD033 -->
 
 ## How do I use it
