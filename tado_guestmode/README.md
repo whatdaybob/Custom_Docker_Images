@@ -2,7 +2,7 @@
 
 ## What is it
 
-[Tado°](https://www.tado.com/) although great, is lacking one feature that I desperately needed, a guest mode. In short we had a babysitter and me and the other half went out and enjoyed some freedom from parenting, stupidly we forgot the heating was automated by our geolocation and the heating shut off. Normally this would be ok as you can manually control them but the techphobia was strong in our babysitter. Sure we/you can manually set the house to home but that requires an ingredient I dont have, effort. Plus what's the point in smart heating and a smart home if you dont make it work for  you.
+[Tado°](https://www.tado.com/) although great, is lacking one feature that I desperately needed, a guest mode. In short we had a babysitter and me and the other half went out and enjoyed some freedom from parenting, stupidly we forgot the heating was automated by our geolocation and the heating shut off. Normally this would be ok as you can manually control them but the tech-phobia was strong in our babysitter. Sure we/you can manually set the house to home but that requires an ingredient I don't have, effort. Plus what's the point in smart heating and a smart home if you don't make it work for you.
 
 <!-- markdownlint-disable MD033 -->
 <div style="width:100%">
