@@ -8,3 +8,5 @@ __pycache__/
 sonarr_root/
 env/
 tado_connect.py.backup
+.venv
+*_cookies.txt
