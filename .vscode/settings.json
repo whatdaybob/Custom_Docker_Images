@@ -2,4 +2,10 @@
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}\\plex_auto_collections\\app",
+        "${workspaceFolder}\\sonarr_youtubedl\\app",
+        "${workspaceFolder}\\tado_guestmode\\app",
+    ],
+    "python.pythonPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
 }
