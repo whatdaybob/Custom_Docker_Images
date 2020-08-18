@@ -6,6 +6,7 @@
         "${workspaceFolder}\\plex_auto_collections\\app",
         "${workspaceFolder}\\sonarr_youtubedl\\app",
         "${workspaceFolder}\\tado_guestmode\\app",
+        "${workspaceFolder}\\.venv\\Lib\\site-packages"
     ],
     "python.pythonPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
 }
