@@ -1,3 +1,6 @@
+sonarrytdl:
+    scan_interval: 1 # minutes between scans
+    debug: False # Set to True for a more verbose output
 sonarr:
     host: 192.168.1.123
     port: 1234
@@ -23,3 +26,7 @@ series:
     offset: 
       days: 2
       hours: 3
+    regex:
+      sonarr:
+        match: '.-.#[0-9]*$'
+        replace: ''
