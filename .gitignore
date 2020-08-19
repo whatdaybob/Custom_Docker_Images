@@ -4,9 +4,11 @@ sonarr_youtubedl/config/config.yml
 plex_auto_collections/
 xbox_webapi/
 # Local testing files
-__pycache__/
-sonarr_root/
 env/
-tado_connect.py.backup
+__pycache__/
+*.backup
 .venv
 *_cookies.txt
+sonarr_root/
+sonarr_youtubedl/config/config.yml.template
+*.log
