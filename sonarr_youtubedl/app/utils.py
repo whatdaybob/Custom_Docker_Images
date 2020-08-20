@@ -4,6 +4,8 @@ import sys
 import datetime
 import yaml
 import logging
+from logging.handlers import RotatingFileHandler
+
 
 CONFIGFILE = os.environ['CONFIGPATH']
 # CONFIGPATH = CONFIGFILE.replace('config.yml', '')
@@ -101,7 +103,8 @@ def ytdl_hooks_debug(d):
         file_tuple = os.path.split(os.path.abspath(d['filename']))
         logger.info("      Done downloading {}".format(file_tuple[1]))  # print("Done downloading {}".format(file_tuple[1]))
     if d['status'] == 'downloading':
-        logger.debug(d['filename'], d['_percent_str'], d['_eta_str'])  # print(d['filename'], d['_percent_str'], d['_eta_str'])
+        progress = "      {} - {} - {}".format(d['filename'], d['_percent_str'], d['_eta_str'])
+        logger.debug(progress)
 
 
 def ytdl_hooks(d):
@@ -109,3 +112,34 @@ def ytdl_hooks(d):
     if d['status'] == 'finished':
         file_tuple = os.path.split(os.path.abspath(d['filename']))
         logger.info("      Downloaded - {}".format(file_tuple[1]))
+
+
+def setup_logging(lf_enabled=True, lc_enabled=True):
+
+    logger = logging.getLogger('sonarr_youtubedl')
+    logger.setLevel(logging.INFO)
+    log_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+    if lf_enabled:
+        # setup logfile
+        log_file = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'logs'))
+        log_file = os.path.abspath(log_file + '/sonarr_youtubedl.log')
+        loggerfile = RotatingFileHandler(
+            log_file,
+            maxBytes=5000000,
+            backupCount=5
+        )
+        loggerfile.setLevel(logging.INFO)
+        loggerfile.set_name('FileHandler')
+        loggerfile.setFormatter(log_format)
+        logger.addHandler(loggerfile)
+
+    if lc_enabled:
+        # setup console log
+        loggerconsole = logging.StreamHandler()
+        loggerconsole.setLevel(logging.INFO)
+        loggerconsole.set_name('StreamHandler')
+        loggerconsole.setFormatter(log_format)
+        logger.addHandler(loggerconsole)
+
+    return logger
