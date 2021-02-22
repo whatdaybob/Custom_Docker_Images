@@ -11,17 +11,9 @@
             "program": "${workspaceFolder}/plex_auto_collections/app/plex_auto_collections.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/plex_auto_collections/app",
-            "envFile": "${workspaceFolder}/env/plex_auto_collections_dev.env"
-        },
-        {
-            "name": "sonarr_youtubedl",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/sonarr_youtubedl/app/sonarr_youtubedl.py",
-            "console": "integratedTerminal",
-            "cwd": "${workspaceFolder}/sonarr_youtubedl/app",
-            "envFile": "${workspaceFolder}/env/sonarr_youtubedl_dev.env"
-        },
+            "envFile": "${workspaceFolder}/env/plex_auto_collections_dev.env",
+            "python": "${command:python.interpreterPath}"
+        }
         {
             "name": "tado_guestmode",
             "type": "python",
@@ -29,7 +21,8 @@
             "program": "${workspaceFolder}/tado_guestmode/app/devlocal_test.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/tado_guestmode/app",
-            "envFile": "${workspaceFolder}/env/tado_guestmode_dev.env"
+            "envFile": "${workspaceFolder}/env/tado_guestmode_dev.env",
+            "python": "${command:python.interpreterPath}"
         }
     ]
 }
