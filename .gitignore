@@ -11,4 +11,4 @@ __pycache__/
 *_cookies.txt
 sonarr_root/
 sonarr_youtubedl/config/config.yml.template
-logs/
+*.log
