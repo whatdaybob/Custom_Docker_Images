@@ -1,0 +1,17 @@
+{
+   "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Devcontainer: Launch tado_guestmode",
+            "type": "python",
+            "request": "launch",
+            "program": "/usr/local/bin/gunicorn",
+            "gevent": true,
+            // "args": ["-b", "0.0.0.0:80", "rest:api"],
+            "cwd": "${workspaceRoot}/app",
+            "args": ["rest:api", "--bind=0.0.0.0:80", "--reload", "-w", "1", "--timeout=7200"],
+            "postDebugTask": "killdebugger"
+        }
+        
+    ]
+}
