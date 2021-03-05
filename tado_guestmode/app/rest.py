@@ -7,12 +7,12 @@ class AddGuest(object):
 
     def on_get(self, req, resp):
         """ Creates a guest user but sets guest geolocation to untracked"""
-        status, message = tado.addGuest()
+        status, updated, message = tado.addGuest()
         if status:
             status, message = tado.updateGuestLocation()
-            response = [{"success": status, "message": message}]
+            response = [{"success": status, "updated": updated, "message": message}]
         else:
-            response = [{"success": status, "message": message}]
+            response = [{"success": status, "updated": updated, "message": message}]
         resp.body = json.dumps(response)
 
 

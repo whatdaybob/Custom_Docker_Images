@@ -155,15 +155,15 @@ class TadoAPI():
     def addGuest(self):
         try:
             if self.guest_device == 0:
-                insert = requests.get('{0}/{1}/createAppUser?username={2}&password={3}&nickname={4}&geoTrackingEnabled=false&deviceName={5}&devicePlatform={5}&deviceUuid={5}&deviceOsVer={6}&appVersion={6}'.format(self.mobileurl, self.mobileversion, self.username, self.password, 'Guest', 'tado-connect', '0.1')).json()
-                if insert['success'] is False:
-                    raise Exception(insert['message'])
+                insert = requests.post('{0}/v2/homes/{1}/mobileDevices'.format(self.apiurl, self.home_id), headers=self.params, timeout=60, json={"metadata":{"device":{"locale":"en","model":"iPhone12,1","osVersion":"14.5","platform":"iOS"},"tadoApp":{"version":"6.5(10233)"}},"name":"Guest","settings":{"pushNotifications":{"awayModeReminder":"false","energySavingsReportReminder":"false","homeModeReminder":"false","incidentDetection":"false","lowBatteryReminder":"false","openWindowReminder":"false"}}}).json()
+                if 'errors' in insert:
+                    raise Exception(insert['errors'][0]['title'])
                 self.guest_device = self.getMobileDevices()
-                return True, "Guest device added"
+                return True, True, "Guest device added to home"
+            else:
+                return True, False, "Guest device already exists."
         except Exception as error:
-            return False, error.args[0]
-        else:
-            return False, "Guest device already exists."
+            return False, False, error.args[0]
 
     @Decorators.refreshToken
     def getGuestTracking(self):
