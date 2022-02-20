@@ -52,7 +52,8 @@ class GuestTrackingOff(object):
         resp.body = json.dumps(response)
 
 
-api = falcon.API()
+app = falcon.App()
+
 tado = TadoAPI()
 
 addguest_endpoint = AddGuest()
@@ -61,8 +62,8 @@ guest_endpoint = GuestTracking()
 guestenable_endpoint = GuestTrackingOn()
 guestdisable_endpoint = GuestTrackingOff()
 
-api.add_route('/add', addguest_endpoint)
-api.add_route('/remove', delguest_endpoint)
-api.add_route('/status', guest_endpoint)
-api.add_route('/enable', guestenable_endpoint)
-api.add_route('/disable', guestdisable_endpoint)
+app.add_route('/add', addguest_endpoint)
+app.add_route('/remove', delguest_endpoint)
+app.add_route('/status', guest_endpoint)
+app.add_route('/enable', guestenable_endpoint)
+app.add_route('/disable', guestdisable_endpoint)

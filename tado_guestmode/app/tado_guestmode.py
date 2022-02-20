@@ -30,11 +30,7 @@ class TadoAPI():
         self.username = cfg['tado']['user']
         self.password = cfg['tado']['pass']
         self.secret = cfg['tado']['secret']
-        self.api_calls = 0
         self.apiurl = 'https://my.tado.com/api'
-        self.mobileurl = 'https://my.tado.com/mobile'
-        self.mobileversion = '1.9'
-        # self.session = requests.Session()
 
         try:
             self.access_token = self.getAccessToken()
@@ -81,6 +77,16 @@ class TadoAPI():
         else:
             pass
 
+    class Decorators():
+        # refresh the token on all calls
+        @staticmethod
+        def refreshToken(decorated):
+            def wrapper(api, *args, **kwargs):
+                if time.time() > api.access_token_expiration:
+                    api.getAccessToken()
+                return decorated(api, *args, **kwargs)
+            return wrapper
+
     def getAccessToken(self):
         try:
             token_body = {
@@ -126,16 +132,6 @@ class TadoAPI():
             guest_id = 0
             return guest_id
 
-    class Decorators():
-        @staticmethod
-        def refreshToken(decorated):
-            def wrapper(api, *args, **kwargs):
-                if time.time() > api.access_token_expiration:
-                    api.getAccessToken()
-                return decorated(api, *args, **kwargs)
-
-            return wrapper
-
     @Decorators.refreshToken
     def deleteGuest(self):
         """
@@ -155,7 +151,7 @@ class TadoAPI():
     def addGuest(self):
         try:
             if self.guest_device == 0:
-                insert = requests.post('{0}/v2/homes/{1}/mobileDevices'.format(self.apiurl, self.home_id), headers=self.params, timeout=60, json={"metadata":{"device":{"locale":"en","model":"iPhone12,1","osVersion":"14.5","platform":"iOS"},"tadoApp":{"version":"6.5(10233)"}},"name":"Guest","settings":{"pushNotifications":{"awayModeReminder":"false","energySavingsReportReminder":"false","homeModeReminder":"false","incidentDetection":"false","lowBatteryReminder":"false","openWindowReminder":"false"}}}).json()
+                insert = requests.post('{0}/v2/homes/{1}/mobileDevices'.format(self.apiurl, self.home_id), headers=self.params, timeout=60, json={"metadata": {"device": {"locale": "en", "model": "iPhone12,1", "osVersion": "14.5", "platform": "iOS"}, "tadoApp": {"version": "6.5(10233)"}}, "name": "Guest", "settings": {"pushNotifications": {"awayModeReminder": "false", "energySavingsReportReminder": "false", "homeModeReminder": "false", "incidentDetection": "false", "lowBatteryReminder": "false", "openWindowReminder": "false"}}}).json()
                 if 'errors' in insert:
                     raise Exception(insert['errors'][0]['title'])
                 self.guest_device = self.getMobileDevices()

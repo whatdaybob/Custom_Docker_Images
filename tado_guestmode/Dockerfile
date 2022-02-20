@@ -1,4 +1,4 @@
-FROM python:3.7-buster
+FROM python:3.9-slim-buster
 LABEL maintainer="Martin Jones <whatdaybob@outlook.com>"
 
 # Copy and install requirements
@@ -32,4 +32,4 @@ RUN \
 # ENV setup
 ENV CONFIGPATH /config/config.yml
 
-CMD ["gunicorn", "-b", "0.0.0.0:80", "rest:api"]
+CMD ["gunicorn", "-b", "0.0.0.0:80", "rest:app", "-w", "5"]

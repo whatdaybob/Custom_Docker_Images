@@ -9,7 +9,7 @@
             "gevent": true,
             // "args": ["-b", "0.0.0.0:80", "rest:api"],
             "cwd": "${workspaceRoot}/app",
-            "args": ["rest:api", "--bind=0.0.0.0:80", "--reload", "-w", "1", "--timeout=7200"],
+            "args": ["rest:app", "--bind=0.0.0.0:80", "--reload", "-w", "5", "--timeout=7200", "--log-level", "DEBUG"],
             "postDebugTask": "killdebugger"
         }
         

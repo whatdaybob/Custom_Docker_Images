@@ -3,7 +3,12 @@
 	"context": "..",
 	"dockerFile": "Dockerfile",
 	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/bash",
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "/bin/bash",
+				"icon": "terminal-bash"
+			}
+		},
 		"python.pythonPath": "/usr/local/bin/python",
 		"python.linting.enabled": true,
 		"python.linting.pylintEnabled": false,
@@ -20,5 +25,5 @@
 	"mounts": [
 		"source=${localWorkspaceFolder}/config/config.yml,target=/config/config.yml,type=bind",
 	],
-	"appPort": 5555,
+	"appPort": 80
 }
